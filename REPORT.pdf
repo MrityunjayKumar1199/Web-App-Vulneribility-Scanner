@@ -1,0 +1,25 @@
+# Web Application Vulnerability Scanner
+
+## Introduction
+This project implements a simple vulnerability scanner that detects common web application vulnerabilities such as SQL Injection (SQLi) and Cross-Site Scripting (XSS). It provides both a command-line interface and a Flask-based web dashboard.
+
+## Abstract
+Web vulnerabilities like XSS and SQLi are among the OWASP Top 10 security issues. This project simulates how automated scanners can identify these flaws by injecting test payloads into input fields and URLs. The results are logged and displayed in a clean interface.
+
+## Tools Used
+- **Python 3**
+- **Requests** (for HTTP communication)
+- **BeautifulSoup** (for parsing HTML)
+- **Flask** (for simple UI)
+- **OWASP Top 10 checklist** (for reference)
+
+## Steps Involved
+1. **Form Detection:** Parse HTML pages and extract form actions, input names, and methods.
+2. **Payload Injection:** Test each form and parameter with common SQLi and XSS payloads.
+3. **Response Analysis:** Check if payloads reflect or trigger known error patterns.
+4. **Flask UI:** Display results interactively in a web interface.
+
+## Conclusion
+The Web Vulnerability Scanner demonstrates how automated tools can identify weaknesses in web applications. It reinforces understanding of common exploits and the importance of secure coding practices, input validation, and proper sanitization.
+
+**Keywords:** Web Security, OWASP, SQL Injection, XSS, Flask, Python.
