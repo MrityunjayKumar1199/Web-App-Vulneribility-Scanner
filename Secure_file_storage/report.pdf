@@ -1,0 +1,22 @@
+
+# Secure File Storage System with AES-256
+
+## Introduction
+This project implements a local file encryption and decryption tool using AES-256 encryption to ensure confidentiality and integrity of sensitive data. It stores file metadata for integrity verification.
+
+## Abstract
+Files are encrypted with AES-256-CBC using a key derived from a passphrase through PBKDF2-HMAC-SHA256. An HMAC-SHA256 authenticates ciphertext and parameters to prevent tampering (Encrypt-then-MAC pattern).
+
+## Tools Used
+- Python 3.8+
+- cryptography library
+
+## Steps Involved
+1. **Key Derivation:** Generate 32-byte key from password + random salt.  
+2. **Encryption:** AES-256-CBC with random IV and PKCS7 padding.  
+3. **Integrity Check:** Compute HMAC over salt, IV, and ciphertext.  
+4. **Decryption:** Verify HMAC, then decrypt and unpad data.  
+5. **Metadata:** Log file name, SHA-256, and timestamp in JSON.
+
+## Conclusion
+The project demonstrates secure encryption techniques and emphasizes the importance of proper key derivation and message authentication. For production systems, authenticated encryption modes such as AES-GCM are recommended.
